@@ -10,7 +10,8 @@ automáticamente las estrategias perdedoras, valida el Top en Out-Of-Sample con
 3. Edita solo la **Celda 2** y ejecuta todo.
 
 Notas técnicas:
-- Cada hilo CUDA (Numba) simula una combinación; los indicadores se calculan con CuPy en la VRAM.
+- Cada hilo de un kernel CUDA (compilado con CuPy) simula una combinación; los indicadores se calculan con CuPy en la VRAM.
+- Lee CSV de Dukascopy, MetaTrader 5, MetaTrader 4 (sin cabecera) y formatos genéricos.
 - El motor GPU reproduce exactamente a VectorBT (misma ejecución en la apertura de la vela siguiente,
   mismas comisiones); la Celda 4 lo comprueba en cada ejecución.
-- Sin GPU, el mismo código se ejecuta con Numba en CPU paralelo.
+- Sin GPU, la misma lógica se ejecuta con Numba en CPU paralelo.
